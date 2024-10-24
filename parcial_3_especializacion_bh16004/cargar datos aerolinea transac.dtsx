@@ -5,14 +5,14 @@
   DTS:CreationName="Microsoft.Package"
   DTS:CreatorComputerName="LAPTOP-QPQV0OO5"
   DTS:CreatorName="LAPTOP-QPQV0OO5\Bryan"
-  DTS:DTSID="{9AC36335-D027-4968-AB85-A01132904018}"
+  DTS:DTSID="{6853F0E3-ACFB-4C4E-85E1-8888E1AE4E75}"
   DTS:ExecutableType="Microsoft.Package"
   DTS:LastModifiedProductVersion="16.0.5556.0"
   DTS:LocaleID="3082"
-  DTS:ObjectName="cargar datos aerolinea transac"
+  DTS:ObjectName="Cargar datos aerolinea transac"
   DTS:PackageType="5"
-  DTS:VersionBuild="5"
-  DTS:VersionGUID="{4C8B3CFB-6741-4DF7-ABE1-CBA78EC32F46}">
+  DTS:VersionBuild="7"
+  DTS:VersionGUID="{4B10456F-0E95-4655-B00A-5D721BDB0C4C}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -70,7 +70,7 @@
                       cachedDataType="wstr"
                       cachedLength="50"
                       cachedName="code"
-                      lineageId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[code]" />
+                      lineageId="Package\Tarea Flujo de datos\Datos de aerolineas de base transaccional.Outputs[Salida de origen de ADO NET].Columns[code]" />
                   </inputColumns>
                   <externalMetadataColumns />
                 </input>
@@ -96,7 +96,7 @@
                           containsID="true"
                           dataType="System.Int32"
                           description="Especifica la columna de entrada usada como origen de datos para la conversión."
-                          name="SourceInputColumnLineageID">#{Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[code]}</property>
+                          name="SourceInputColumnLineageID">#{Package\Tarea Flujo de datos\Datos de aerolineas de base transaccional.Outputs[Salida de origen de ADO NET].Columns[code]}</property>
                         <property
                           dataType="System.Boolean"
                           description="Indica si la columna usa las rutinas de análisis más rápidas independientes de la configuración regional."
@@ -131,119 +131,11 @@
               </outputs>
             </component>
             <component
-              refId="Package\Tarea Flujo de datos\Destino de ADO NET"
-              componentClassID="Microsoft.ManagedComponentHost"
-              contactInfo="Carga datos en una base de datos compatible con ADO.NET que use una vista o tabla de base de datos. Se cargan datos en una tabla nueva o existente. Por ejemplo, se usa un proveedor ADO.NET para ODBC para cargar datos en un destino ODBC.;Microsoft Corporation; Microsoft SQL Server; © Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;2"
-              description="Carga datos en una base de datos compatible con ADO.NET que use una vista o tabla de base de datos. Se cargan datos en una tabla nueva o existente. Por ejemplo, se usa un proveedor ADO.NET para ODBC para cargar datos en un destino ODBC."
-              name="Destino de ADO NET"
-              usesDispositions="true"
-              version="2">
-              <properties>
-                <property
-                  dataType="System.String"
-                  description="Nombre de la tabla de la base de datos de destino."
-                  expressionType="Notify"
-                  name="TableOrViewName"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">"dbo"."DimAerolinea"</property>
-                <property
-                  dataType="System.Int32"
-                  description="Especifique el número de filas por lote. El valor predeterminado es 0, que utiliza el mismo tamaño que el búfer interno de SSIS. "
-                  expressionType="Notify"
-                  name="BatchSize">0</property>
-                <property
-                  dataType="System.Int32"
-                  description="Número de segundos antes de que se agote el tiempo de espera de un comando. Un valor de 0 indica un tiempo de espera infinito. "
-                  expressionType="Notify"
-                  name="CommandTimeout">30</property>
-                <property
-                  dataType="System.Boolean"
-                  description="Especifica si se debe usar la interfaz SqlBulkCopy para mejorar el rendimiento de las operaciones de inserción masiva. No todos los proveedores admiten esta interfaz."
-                  expressionType="Notify"
-                  name="UseBulkInsertWhenPossible">true</property>
-                <property
-                  dataType="System.String"
-                  name="UserComponentTypeName">Microsoft.ADONETDestination</property>
-              </properties>
-              <connections>
-                <connection
-                  refId="Package\Tarea Flujo de datos\Destino de ADO NET.Connections[IDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[localhost.Parcial3_DW]"
-                  connectionManagerRefId="Package.ConnectionManagers[localhost.Parcial3_DW]"
-                  description="Administrador de conexiones administrado"
-                  name="IDbConnection" />
-              </connections>
-              <inputs>
-                <input
-                  refId="Package\Tarea Flujo de datos\Destino de ADO NET.Inputs[Entrada de destino de ADO NET]"
-                  errorRowDisposition="FailComponent"
-                  hasSideEffects="true"
-                  name="Entrada de destino de ADO NET">
-                  <inputColumns>
-                    <inputColumn
-                      refId="Package\Tarea Flujo de datos\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].Columns[code]"
-                      cachedDataType="wstr"
-                      cachedLength="50"
-                      cachedName="code"
-                      externalMetadataColumnId="Package\Tarea Flujo de datos\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[code]"
-                      lineageId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[code]" />
-                    <inputColumn
-                      refId="Package\Tarea Flujo de datos\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].Columns[description]"
-                      cachedDataType="wstr"
-                      cachedLength="150"
-                      cachedName="description"
-                      externalMetadataColumnId="Package\Tarea Flujo de datos\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[description]"
-                      lineageId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[description]" />
-                  </inputColumns>
-                  <externalMetadataColumns
-                    isUsed="True">
-                    <externalMetadataColumn
-                      refId="Package\Tarea Flujo de datos\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[AerolineaKey]"
-                      dataType="i4"
-                      name="AerolineaKey" />
-                    <externalMetadataColumn
-                      refId="Package\Tarea Flujo de datos\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[code]"
-                      dataType="wstr"
-                      length="50"
-                      name="code" />
-                    <externalMetadataColumn
-                      refId="Package\Tarea Flujo de datos\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[description]"
-                      dataType="wstr"
-                      length="150"
-                      name="description" />
-                  </externalMetadataColumns>
-                </input>
-              </inputs>
-              <outputs>
-                <output
-                  refId="Package\Tarea Flujo de datos\Destino de ADO NET.Outputs[Salida de error de destino de ADO NET]"
-                  exclusionGroup="1"
-                  isErrorOut="true"
-                  name="Salida de error de destino de ADO NET"
-                  synchronousInputId="Package\Tarea Flujo de datos\Destino de ADO NET.Inputs[Entrada de destino de ADO NET]">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\Tarea Flujo de datos\Destino de ADO NET.Outputs[Salida de error de destino de ADO NET].Columns[ErrorCode]"
-                      dataType="i4"
-                      lineageId="Package\Tarea Flujo de datos\Destino de ADO NET.Outputs[Salida de error de destino de ADO NET].Columns[ErrorCode]"
-                      name="ErrorCode"
-                      specialFlags="1" />
-                    <outputColumn
-                      refId="Package\Tarea Flujo de datos\Destino de ADO NET.Outputs[Salida de error de destino de ADO NET].Columns[ErrorColumn]"
-                      dataType="i4"
-                      lineageId="Package\Tarea Flujo de datos\Destino de ADO NET.Outputs[Salida de error de destino de ADO NET].Columns[ErrorColumn]"
-                      name="ErrorColumn"
-                      specialFlags="2" />
-                  </outputColumns>
-                  <externalMetadataColumns />
-                </output>
-              </outputs>
-            </component>
-            <component
-              refId="Package\Tarea Flujo de datos\Origen de ADO NET"
+              refId="Package\Tarea Flujo de datos\Datos de aerolineas de base transaccional"
               componentClassID="Microsoft.ManagedComponentHost"
               contactInfo="Consume datos de SQL Server, OLE DB, ODBC u Oracle mediante el correspondiente proveedor de datos de .NET Framework. Se usa una instrucción Transact-SQL para definir el conjunto de resultados. Por ejemplo, se extraen datos de SQL Server con el proveedor de datos de .NET Framework para SQL Server.;Microsoft Corporation; Microsoft SQL Server; © Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;4"
               description="Consume datos de SQL Server, OLE DB, ODBC u Oracle mediante el correspondiente proveedor de datos de .NET Framework. Se usa una instrucción Transact-SQL para definir el conjunto de resultados. Por ejemplo, se extraen datos de SQL Server con el proveedor de datos de .NET Framework para SQL Server."
-              name="Origen de ADO NET"
+              name="Datos de aerolineas de base transaccional"
               usesDispositions="true"
               version="4">
               <properties>
@@ -278,7 +170,7 @@
               </properties>
               <connections>
                 <connection
-                  refId="Package\Tarea Flujo de datos\Origen de ADO NET.Connections[IDbConnection]"
+                  refId="Package\Tarea Flujo de datos\Datos de aerolineas de base transaccional.Connections[IDbConnection]"
                   connectionManagerID="Package.ConnectionManagers[localhost.parcial 3 base transaccional]"
                   connectionManagerRefId="Package.ConnectionManagers[localhost.parcial 3 base transaccional]"
                   description="Administrador de conexiones administrado"
@@ -286,71 +178,179 @@
               </connections>
               <outputs>
                 <output
-                  refId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de origen de ADO NET]"
+                  refId="Package\Tarea Flujo de datos\Datos de aerolineas de base transaccional.Outputs[Salida de origen de ADO NET]"
                   name="Salida de origen de ADO NET">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[code]"
+                      refId="Package\Tarea Flujo de datos\Datos de aerolineas de base transaccional.Outputs[Salida de origen de ADO NET].Columns[code]"
                       dataType="wstr"
                       errorOrTruncationOperation="Conversión"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de origen de ADO NET].ExternalColumns[code]"
+                      externalMetadataColumnId="Package\Tarea Flujo de datos\Datos de aerolineas de base transaccional.Outputs[Salida de origen de ADO NET].ExternalColumns[code]"
                       length="50"
-                      lineageId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[code]"
+                      lineageId="Package\Tarea Flujo de datos\Datos de aerolineas de base transaccional.Outputs[Salida de origen de ADO NET].Columns[code]"
                       name="code"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[description]"
+                      refId="Package\Tarea Flujo de datos\Datos de aerolineas de base transaccional.Outputs[Salida de origen de ADO NET].Columns[description]"
                       dataType="wstr"
                       errorOrTruncationOperation="Conversión"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de origen de ADO NET].ExternalColumns[description]"
+                      externalMetadataColumnId="Package\Tarea Flujo de datos\Datos de aerolineas de base transaccional.Outputs[Salida de origen de ADO NET].ExternalColumns[description]"
                       length="150"
-                      lineageId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de origen de ADO NET].Columns[description]"
+                      lineageId="Package\Tarea Flujo de datos\Datos de aerolineas de base transaccional.Outputs[Salida de origen de ADO NET].Columns[description]"
                       name="description"
                       truncationRowDisposition="FailComponent" />
                   </outputColumns>
                   <externalMetadataColumns
                     isUsed="True">
                     <externalMetadataColumn
-                      refId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de origen de ADO NET].ExternalColumns[code]"
+                      refId="Package\Tarea Flujo de datos\Datos de aerolineas de base transaccional.Outputs[Salida de origen de ADO NET].ExternalColumns[code]"
                       dataType="wstr"
                       length="50"
                       name="code" />
                     <externalMetadataColumn
-                      refId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de origen de ADO NET].ExternalColumns[description]"
+                      refId="Package\Tarea Flujo de datos\Datos de aerolineas de base transaccional.Outputs[Salida de origen de ADO NET].ExternalColumns[description]"
                       dataType="wstr"
                       length="150"
                       name="description" />
                   </externalMetadataColumns>
                 </output>
                 <output
-                  refId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de error de origen de ADO NET]"
+                  refId="Package\Tarea Flujo de datos\Datos de aerolineas de base transaccional.Outputs[Salida de error de origen de ADO NET]"
                   isErrorOut="true"
                   name="Salida de error de origen de ADO NET">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de error de origen de ADO NET].Columns[code]"
+                      refId="Package\Tarea Flujo de datos\Datos de aerolineas de base transaccional.Outputs[Salida de error de origen de ADO NET].Columns[code]"
                       dataType="wstr"
                       length="50"
-                      lineageId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de error de origen de ADO NET].Columns[code]"
+                      lineageId="Package\Tarea Flujo de datos\Datos de aerolineas de base transaccional.Outputs[Salida de error de origen de ADO NET].Columns[code]"
                       name="code" />
                     <outputColumn
-                      refId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de error de origen de ADO NET].Columns[description]"
+                      refId="Package\Tarea Flujo de datos\Datos de aerolineas de base transaccional.Outputs[Salida de error de origen de ADO NET].Columns[description]"
                       dataType="wstr"
                       length="150"
-                      lineageId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de error de origen de ADO NET].Columns[description]"
+                      lineageId="Package\Tarea Flujo de datos\Datos de aerolineas de base transaccional.Outputs[Salida de error de origen de ADO NET].Columns[description]"
                       name="description" />
                     <outputColumn
-                      refId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de error de origen de ADO NET].Columns[ErrorCode]"
+                      refId="Package\Tarea Flujo de datos\Datos de aerolineas de base transaccional.Outputs[Salida de error de origen de ADO NET].Columns[ErrorCode]"
                       dataType="i4"
-                      lineageId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de error de origen de ADO NET].Columns[ErrorCode]"
+                      lineageId="Package\Tarea Flujo de datos\Datos de aerolineas de base transaccional.Outputs[Salida de error de origen de ADO NET].Columns[ErrorCode]"
                       name="ErrorCode"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de error de origen de ADO NET].Columns[ErrorColumn]"
+                      refId="Package\Tarea Flujo de datos\Datos de aerolineas de base transaccional.Outputs[Salida de error de origen de ADO NET].Columns[ErrorColumn]"
                       dataType="i4"
-                      lineageId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de error de origen de ADO NET].Columns[ErrorColumn]"
+                      lineageId="Package\Tarea Flujo de datos\Datos de aerolineas de base transaccional.Outputs[Salida de error de origen de ADO NET].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Tarea Flujo de datos\Dimension aerolinea en DW"
+              componentClassID="Microsoft.ManagedComponentHost"
+              contactInfo="Carga datos en una base de datos compatible con ADO.NET que use una vista o tabla de base de datos. Se cargan datos en una tabla nueva o existente. Por ejemplo, se usa un proveedor ADO.NET para ODBC para cargar datos en un destino ODBC.;Microsoft Corporation; Microsoft SQL Server; © Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;2"
+              description="Carga datos en una base de datos compatible con ADO.NET que use una vista o tabla de base de datos. Se cargan datos en una tabla nueva o existente. Por ejemplo, se usa un proveedor ADO.NET para ODBC para cargar datos en un destino ODBC."
+              name="Dimension aerolinea en DW"
+              usesDispositions="true"
+              version="2">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Nombre de la tabla de la base de datos de destino."
+                  expressionType="Notify"
+                  name="TableOrViewName"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">"dbo"."DimAerolinea"</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifique el número de filas por lote. El valor predeterminado es 0, que utiliza el mismo tamaño que el búfer interno de SSIS. "
+                  expressionType="Notify"
+                  name="BatchSize">0</property>
+                <property
+                  dataType="System.Int32"
+                  description="Número de segundos antes de que se agote el tiempo de espera de un comando. Un valor de 0 indica un tiempo de espera infinito. "
+                  expressionType="Notify"
+                  name="CommandTimeout">30</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Especifica si se debe usar la interfaz SqlBulkCopy para mejorar el rendimiento de las operaciones de inserción masiva. No todos los proveedores admiten esta interfaz."
+                  expressionType="Notify"
+                  name="UseBulkInsertWhenPossible">true</property>
+                <property
+                  dataType="System.String"
+                  name="UserComponentTypeName">Microsoft.ADONETDestination</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Tarea Flujo de datos\Dimension aerolinea en DW.Connections[IDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[localhost.Parcial3_DW]"
+                  connectionManagerRefId="Package.ConnectionManagers[localhost.Parcial3_DW]"
+                  description="Administrador de conexiones administrado"
+                  name="IDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Tarea Flujo de datos\Dimension aerolinea en DW.Inputs[Entrada de destino de ADO NET]"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="Entrada de destino de ADO NET">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Tarea Flujo de datos\Dimension aerolinea en DW.Inputs[Entrada de destino de ADO NET].Columns[code]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="code"
+                      externalMetadataColumnId="Package\Tarea Flujo de datos\Dimension aerolinea en DW.Inputs[Entrada de destino de ADO NET].ExternalColumns[code]"
+                      lineageId="Package\Tarea Flujo de datos\Datos de aerolineas de base transaccional.Outputs[Salida de origen de ADO NET].Columns[code]" />
+                    <inputColumn
+                      refId="Package\Tarea Flujo de datos\Dimension aerolinea en DW.Inputs[Entrada de destino de ADO NET].Columns[description]"
+                      cachedDataType="wstr"
+                      cachedLength="150"
+                      cachedName="description"
+                      externalMetadataColumnId="Package\Tarea Flujo de datos\Dimension aerolinea en DW.Inputs[Entrada de destino de ADO NET].ExternalColumns[description]"
+                      lineageId="Package\Tarea Flujo de datos\Datos de aerolineas de base transaccional.Outputs[Salida de origen de ADO NET].Columns[description]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Tarea Flujo de datos\Dimension aerolinea en DW.Inputs[Entrada de destino de ADO NET].ExternalColumns[AerolineaKey]"
+                      dataType="i4"
+                      name="AerolineaKey" />
+                    <externalMetadataColumn
+                      refId="Package\Tarea Flujo de datos\Dimension aerolinea en DW.Inputs[Entrada de destino de ADO NET].ExternalColumns[code]"
+                      dataType="wstr"
+                      length="50"
+                      name="code" />
+                    <externalMetadataColumn
+                      refId="Package\Tarea Flujo de datos\Dimension aerolinea en DW.Inputs[Entrada de destino de ADO NET].ExternalColumns[description]"
+                      dataType="wstr"
+                      length="150"
+                      name="description" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Tarea Flujo de datos\Dimension aerolinea en DW.Outputs[Salida de error de destino de ADO NET]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Salida de error de destino de ADO NET"
+                  synchronousInputId="Package\Tarea Flujo de datos\Dimension aerolinea en DW.Inputs[Entrada de destino de ADO NET]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\Dimension aerolinea en DW.Outputs[Salida de error de destino de ADO NET].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Tarea Flujo de datos\Dimension aerolinea en DW.Outputs[Salida de error de destino de ADO NET].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Tarea Flujo de datos\Dimension aerolinea en DW.Outputs[Salida de error de destino de ADO NET].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Tarea Flujo de datos\Dimension aerolinea en DW.Outputs[Salida de error de destino de ADO NET].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -362,14 +362,14 @@
           <paths>
             <path
               refId="Package\Tarea Flujo de datos.Paths[Salida de conversión de datos]"
-              endId="Package\Tarea Flujo de datos\Destino de ADO NET.Inputs[Entrada de destino de ADO NET]"
+              endId="Package\Tarea Flujo de datos\Dimension aerolinea en DW.Inputs[Entrada de destino de ADO NET]"
               name="Salida de conversión de datos"
               startId="Package\Tarea Flujo de datos\Conversión de datos.Outputs[Salida de conversión de datos]" />
             <path
               refId="Package\Tarea Flujo de datos.Paths[Salida de origen de ADO NET]"
               endId="Package\Tarea Flujo de datos\Conversión de datos.Inputs[Entrada de conversión de datos]"
               name="Salida de origen de ADO NET"
-              startId="Package\Tarea Flujo de datos\Origen de ADO NET.Outputs[Salida de origen de ADO NET]" />
+              startId="Package\Tarea Flujo de datos\Datos de aerolineas de base transaccional.Outputs[Salida de origen de ADO NET]" />
           </paths>
         </pipeline>
       </DTS:ObjectData>
@@ -400,26 +400,26 @@
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="179,42"
-          Id="Package\Tarea Flujo de datos\Origen de ADO NET"
-          TopLeft="273,122" />
-        <NodeLayout
-          Size="183,42"
-          Id="Package\Tarea Flujo de datos\Destino de ADO NET"
+          Size="216,42"
+          Id="Package\Tarea Flujo de datos\Dimension aerolinea en DW"
           TopLeft="377,302" />
         <NodeLayout
           Size="180,42"
           Id="Package\Tarea Flujo de datos\Conversión de datos"
           TopLeft="360,215" />
+        <NodeLayout
+          Size="286,42"
+          Id="Package\Tarea Flujo de datos\Datos de aerolineas de base transaccional"
+          TopLeft="273,122" />
         <EdgeLayout
           Id="Package\Tarea Flujo de datos.Paths[Salida de origen de ADO NET]"
-          TopLeft="362.5,164">
+          TopLeft="416,164">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="87.5,51"
+              EndConnector="34,51"
               Start="0,0"
-              End="87.5,43.5">
+              End="34,43.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
@@ -430,13 +430,13 @@
                     Point2="0,25.5"
                     Point3="4,25.5" />
                   <mssgle:LineSegment
-                    End="83.5,25.5" />
+                    End="30,25.5" />
                   <mssgle:CubicBezierSegment
-                    Point1="83.5,25.5"
-                    Point2="87.5,25.5"
-                    Point3="87.5,29.5" />
+                    Point1="30,25.5"
+                    Point2="34,25.5"
+                    Point3="34,29.5" />
                   <mssgle:LineSegment
-                    End="87.5,43.5" />
+                    End="34,43.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -451,9 +451,9 @@
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="18.5,45"
+              EndConnector="35,45"
               Start="0,0"
-              End="18.5,37.5">
+              End="35,37.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
@@ -464,13 +464,13 @@
                     Point2="0,22.5"
                     Point3="4,22.5" />
                   <mssgle:LineSegment
-                    End="14.5,22.5" />
+                    End="31,22.5" />
                   <mssgle:CubicBezierSegment
-                    Point1="14.5,22.5"
-                    Point2="18.5,22.5"
-                    Point3="18.5,26.5" />
+                    Point1="31,22.5"
+                    Point2="35,22.5"
+                    Point3="35,26.5" />
                   <mssgle:LineSegment
-                    End="18.5,37.5" />
+                    End="35,37.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -483,7 +483,7 @@
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\Tarea Flujo de datos\Origen de ADO NET">
+    design-time-name="Package\Tarea Flujo de datos\Dimension aerolinea en DW">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -491,7 +491,7 @@
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Tarea Flujo de datos\Destino de ADO NET">
+    design-time-name="Package\Tarea Flujo de datos\Datos de aerolineas de base transaccional">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>

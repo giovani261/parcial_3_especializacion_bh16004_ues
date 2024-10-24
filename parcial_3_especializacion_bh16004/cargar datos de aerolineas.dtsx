@@ -5,14 +5,14 @@
   DTS:CreationName="Microsoft.Package"
   DTS:CreatorComputerName="LAPTOP-QPQV0OO5"
   DTS:CreatorName="LAPTOP-QPQV0OO5\Bryan"
-  DTS:DTSID="{E9D3D0B7-2F7F-4888-9FDD-4A4BDAEB9A8D}"
+  DTS:DTSID="{D69B314A-959B-429E-AC42-004B2E72B99C}"
   DTS:ExecutableType="Microsoft.Package"
   DTS:LastModifiedProductVersion="16.0.5556.0"
   DTS:LocaleID="3082"
-  DTS:ObjectName="cargar datos de aerolineas"
+  DTS:ObjectName="Cargar datos de aerolineas"
   DTS:PackageType="5"
-  DTS:VersionBuild="12"
-  DTS:VersionGUID="{6A6D28E0-188D-4201-B528-1DC213BD858D}">
+  DTS:VersionBuild="14"
+  DTS:VersionGUID="{6474DC2C-C8CF-4DA1-9A94-8BB6591C0F25}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -68,13 +68,13 @@
   <DTS:Variables />
   <DTS:Executables>
     <DTS:Executable
-      DTS:refId="Package\Tarea Flujo de datos"
+      DTS:refId="Package\Cargar datos de csv"
       DTS:CreationName="Microsoft.Pipeline"
       DTS:Description="Tarea Flujo de datos"
       DTS:DTSID="{3E85AE54-3610-4448-BBC6-3250ADA551BF}"
       DTS:ExecutableType="Microsoft.Pipeline"
       DTS:LocaleID="-1"
-      DTS:ObjectName="Tarea Flujo de datos"
+      DTS:ObjectName="Cargar datos de csv"
       DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
       <DTS:Variables />
       <DTS:ObjectData>
@@ -82,7 +82,7 @@
           version="1">
           <components>
             <component
-              refId="Package\Tarea Flujo de datos\Columna derivada"
+              refId="Package\Cargar datos de csv\Columna derivada"
               componentClassID="Microsoft.DerivedColumn"
               contactInfo="Columna derivada;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;0"
               description="Crea nuevos valores de columna aplicando expresiones a las columnas de entrada de la transformación. Crea nuevas columnas o sobrescribe las columnas existentes. Por ejemplo, se concatenan los valores de las columnas 'nombre' y 'apellidos' para crear una columna 'nombre completo'."
@@ -90,18 +90,18 @@
               usesDispositions="true">
               <inputs>
                 <input
-                  refId="Package\Tarea Flujo de datos\Columna derivada.Inputs[Entrada de columna derivada]"
+                  refId="Package\Cargar datos de csv\Columna derivada.Inputs[Entrada de columna derivada]"
                   description="Entrada en la transformación Columna derivada"
                   name="Entrada de columna derivada">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\Tarea Flujo de datos\Columna derivada.Inputs[Entrada de columna derivada].Columns[Code]"
+                      refId="Package\Cargar datos de csv\Columna derivada.Inputs[Entrada de columna derivada].Columns[Code]"
                       cachedDataType="wstr"
                       cachedLength="50"
                       cachedName="Code"
                       errorOrTruncationOperation="Cálculo"
                       errorRowDisposition="FailComponent"
-                      lineageId="Package\Tarea Flujo de datos\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[Code]"
+                      lineageId="Package\Cargar datos de csv\Datos de aerolineas en csv.Outputs[Salida de origen de archivo plano].Columns[Code]"
                       truncationRowDisposition="FailComponent"
                       usageType="readWrite">
                       <properties>
@@ -109,7 +109,7 @@
                           containsID="true"
                           dataType="System.String"
                           description="Expresión de columna derivada"
-                          name="Expression">[ISNULL](#{Package\Tarea Flujo de datos\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[Code]}) ? "0" : #{Package\Tarea Flujo de datos\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[Code]}</property>
+                          name="Expression">[ISNULL](#{Package\Cargar datos de csv\Datos de aerolineas en csv.Outputs[Salida de origen de archivo plano].Columns[Code]}) ? "0" : #{Package\Cargar datos de csv\Datos de aerolineas en csv.Outputs[Salida de origen de archivo plano].Columns[Code]}</property>
                         <property
                           containsID="true"
                           dataType="System.String"
@@ -124,31 +124,31 @@
               </inputs>
               <outputs>
                 <output
-                  refId="Package\Tarea Flujo de datos\Columna derivada.Outputs[Salida de columna derivada]"
+                  refId="Package\Cargar datos de csv\Columna derivada.Outputs[Salida de columna derivada]"
                   description="Salida predeterminada de la transformación Columna derivada"
                   exclusionGroup="1"
                   name="Salida de columna derivada"
-                  synchronousInputId="Package\Tarea Flujo de datos\Columna derivada.Inputs[Entrada de columna derivada]">
+                  synchronousInputId="Package\Cargar datos de csv\Columna derivada.Inputs[Entrada de columna derivada]">
                   <externalMetadataColumns />
                 </output>
                 <output
-                  refId="Package\Tarea Flujo de datos\Columna derivada.Outputs[Salida de error de columna derivada]"
+                  refId="Package\Cargar datos de csv\Columna derivada.Outputs[Salida de error de columna derivada]"
                   description="Salida de error de la transformación Columna derivada"
                   exclusionGroup="1"
                   isErrorOut="true"
                   name="Salida de error de columna derivada"
-                  synchronousInputId="Package\Tarea Flujo de datos\Columna derivada.Inputs[Entrada de columna derivada]">
+                  synchronousInputId="Package\Cargar datos de csv\Columna derivada.Inputs[Entrada de columna derivada]">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Tarea Flujo de datos\Columna derivada.Outputs[Salida de error de columna derivada].Columns[ErrorCode]"
+                      refId="Package\Cargar datos de csv\Columna derivada.Outputs[Salida de error de columna derivada].Columns[ErrorCode]"
                       dataType="i4"
-                      lineageId="Package\Tarea Flujo de datos\Columna derivada.Outputs[Salida de error de columna derivada].Columns[ErrorCode]"
+                      lineageId="Package\Cargar datos de csv\Columna derivada.Outputs[Salida de error de columna derivada].Columns[ErrorCode]"
                       name="ErrorCode"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\Tarea Flujo de datos\Columna derivada.Outputs[Salida de error de columna derivada].Columns[ErrorColumn]"
+                      refId="Package\Cargar datos de csv\Columna derivada.Outputs[Salida de error de columna derivada].Columns[ErrorColumn]"
                       dataType="i4"
-                      lineageId="Package\Tarea Flujo de datos\Columna derivada.Outputs[Salida de error de columna derivada].Columns[ErrorColumn]"
+                      lineageId="Package\Cargar datos de csv\Columna derivada.Outputs[Salida de error de columna derivada].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -157,11 +157,130 @@
               </outputs>
             </component>
             <component
-              refId="Package\Tarea Flujo de datos\Destino de ADO NET"
+              refId="Package\Cargar datos de csv\Datos de aerolineas en csv"
+              componentClassID="Microsoft.FlatFileSource"
+              contactInfo="Origen de archivo plano;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;1"
+              description="Origen de archivo plano"
+              localeId="3082"
+              name="Datos de aerolineas en csv"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Especifica si las columnas de longitud cero se tratan como NULL."
+                  name="RetainNulls">true</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica el nombre de una columna de salida que contiene el nombre de archivo. Si no se especifica ningún nombre, no se genera ninguna columna de salida con el nombre de archivo."
+                  name="FileNameColumnName"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Cargar datos de csv\Datos de aerolineas en csv.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Administrador de conexiones de archivos planos]"
+                  connectionManagerRefId="Package.ConnectionManagers[Administrador de conexiones de archivos planos]"
+                  name="FlatFileConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Cargar datos de csv\Datos de aerolineas en csv.Outputs[Salida de origen de archivo plano]"
+                  name="Salida de origen de archivo plano">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Cargar datos de csv\Datos de aerolineas en csv.Outputs[Salida de origen de archivo plano].Columns[Code]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="IgnoreFailure"
+                      externalMetadataColumnId="Package\Cargar datos de csv\Datos de aerolineas en csv.Outputs[Salida de origen de archivo plano].ExternalColumns[Code]"
+                      length="50"
+                      lineageId="Package\Cargar datos de csv\Datos de aerolineas en csv.Outputs[Salida de origen de archivo plano].Columns[Code]"
+                      name="Code"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica si la columna usa las rutinas de análisis más rápidas independientes de la configuración regional."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica si los datos están en formato binario."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Cargar datos de csv\Datos de aerolineas en csv.Outputs[Salida de origen de archivo plano].Columns[Description]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="IgnoreFailure"
+                      externalMetadataColumnId="Package\Cargar datos de csv\Datos de aerolineas en csv.Outputs[Salida de origen de archivo plano].ExternalColumns[Description]"
+                      length="150"
+                      lineageId="Package\Cargar datos de csv\Datos de aerolineas en csv.Outputs[Salida de origen de archivo plano].Columns[Description]"
+                      name="Description"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica si la columna usa las rutinas de análisis más rápidas independientes de la configuración regional."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica si los datos están en formato binario."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Cargar datos de csv\Datos de aerolineas en csv.Outputs[Salida de origen de archivo plano].ExternalColumns[Code]"
+                      dataType="wstr"
+                      length="50"
+                      name="Code" />
+                    <externalMetadataColumn
+                      refId="Package\Cargar datos de csv\Datos de aerolineas en csv.Outputs[Salida de origen de archivo plano].ExternalColumns[Description]"
+                      codePage="1252"
+                      dataType="str"
+                      length="150"
+                      name="Description" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Cargar datos de csv\Datos de aerolineas en csv.Outputs[Salida de error de origen de archivo plano]"
+                  isErrorOut="true"
+                  name="Salida de error de origen de archivo plano">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Cargar datos de csv\Datos de aerolineas en csv.Outputs[Salida de error de origen de archivo plano].Columns[Columna de salida de error de origen de archivo plano]"
+                      codePage="1252"
+                      dataType="text"
+                      description="Columna de salida de error de origen de archivo plano"
+                      lineageId="Package\Cargar datos de csv\Datos de aerolineas en csv.Outputs[Salida de error de origen de archivo plano].Columns[Columna de salida de error de origen de archivo plano]"
+                      name="Columna de salida de error de origen de archivo plano" />
+                    <outputColumn
+                      refId="Package\Cargar datos de csv\Datos de aerolineas en csv.Outputs[Salida de error de origen de archivo plano].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Cargar datos de csv\Datos de aerolineas en csv.Outputs[Salida de error de origen de archivo plano].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Cargar datos de csv\Datos de aerolineas en csv.Outputs[Salida de error de origen de archivo plano].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Cargar datos de csv\Datos de aerolineas en csv.Outputs[Salida de error de origen de archivo plano].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Cargar datos de csv\Tabla transaccional aerolineas"
               componentClassID="Microsoft.ManagedComponentHost"
               contactInfo="Carga datos en una base de datos compatible con ADO.NET que use una vista o tabla de base de datos. Se cargan datos en una tabla nueva o existente. Por ejemplo, se usa un proveedor ADO.NET para ODBC para cargar datos en un destino ODBC.;Microsoft Corporation; Microsoft SQL Server; © Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;2"
               description="Carga datos en una base de datos compatible con ADO.NET que use una vista o tabla de base de datos. Se cargan datos en una tabla nueva o existente. Por ejemplo, se usa un proveedor ADO.NET para ODBC para cargar datos en un destino ODBC."
-              name="Destino de ADO NET"
+              name="Tabla transaccional aerolineas"
               usesDispositions="true"
               version="2">
               <properties>
@@ -192,7 +311,7 @@
               </properties>
               <connections>
                 <connection
-                  refId="Package\Tarea Flujo de datos\Destino de ADO NET.Connections[IDbConnection]"
+                  refId="Package\Cargar datos de csv\Tabla transaccional aerolineas.Connections[IDbConnection]"
                   connectionManagerID="Package.ConnectionManagers[localhost.parcial 3 base transaccional]"
                   connectionManagerRefId="Package.ConnectionManagers[localhost.parcial 3 base transaccional]"
                   description="Administrador de conexiones administrado"
@@ -200,36 +319,36 @@
               </connections>
               <inputs>
                 <input
-                  refId="Package\Tarea Flujo de datos\Destino de ADO NET.Inputs[Entrada de destino de ADO NET]"
+                  refId="Package\Cargar datos de csv\Tabla transaccional aerolineas.Inputs[Entrada de destino de ADO NET]"
                   errorRowDisposition="IgnoreFailure"
                   hasSideEffects="true"
                   name="Entrada de destino de ADO NET">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\Tarea Flujo de datos\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].Columns[Code]"
+                      refId="Package\Cargar datos de csv\Tabla transaccional aerolineas.Inputs[Entrada de destino de ADO NET].Columns[Code]"
                       cachedDataType="wstr"
                       cachedLength="50"
                       cachedName="Code"
-                      externalMetadataColumnId="Package\Tarea Flujo de datos\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[code]"
-                      lineageId="Package\Tarea Flujo de datos\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[Code]" />
+                      externalMetadataColumnId="Package\Cargar datos de csv\Tabla transaccional aerolineas.Inputs[Entrada de destino de ADO NET].ExternalColumns[code]"
+                      lineageId="Package\Cargar datos de csv\Datos de aerolineas en csv.Outputs[Salida de origen de archivo plano].Columns[Code]" />
                     <inputColumn
-                      refId="Package\Tarea Flujo de datos\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].Columns[Description]"
+                      refId="Package\Cargar datos de csv\Tabla transaccional aerolineas.Inputs[Entrada de destino de ADO NET].Columns[Description]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="150"
                       cachedName="Description"
-                      externalMetadataColumnId="Package\Tarea Flujo de datos\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[description]"
-                      lineageId="Package\Tarea Flujo de datos\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[Description]" />
+                      externalMetadataColumnId="Package\Cargar datos de csv\Tabla transaccional aerolineas.Inputs[Entrada de destino de ADO NET].ExternalColumns[description]"
+                      lineageId="Package\Cargar datos de csv\Datos de aerolineas en csv.Outputs[Salida de origen de archivo plano].Columns[Description]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
                     <externalMetadataColumn
-                      refId="Package\Tarea Flujo de datos\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[code]"
+                      refId="Package\Cargar datos de csv\Tabla transaccional aerolineas.Inputs[Entrada de destino de ADO NET].ExternalColumns[code]"
                       dataType="wstr"
                       length="50"
                       name="code" />
                     <externalMetadataColumn
-                      refId="Package\Tarea Flujo de datos\Destino de ADO NET.Inputs[Entrada de destino de ADO NET].ExternalColumns[description]"
+                      refId="Package\Cargar datos de csv\Tabla transaccional aerolineas.Inputs[Entrada de destino de ADO NET].ExternalColumns[description]"
                       dataType="wstr"
                       length="150"
                       name="description" />
@@ -238,141 +357,22 @@
               </inputs>
               <outputs>
                 <output
-                  refId="Package\Tarea Flujo de datos\Destino de ADO NET.Outputs[Salida de error de destino de ADO NET]"
+                  refId="Package\Cargar datos de csv\Tabla transaccional aerolineas.Outputs[Salida de error de destino de ADO NET]"
                   exclusionGroup="1"
                   isErrorOut="true"
                   name="Salida de error de destino de ADO NET"
-                  synchronousInputId="Package\Tarea Flujo de datos\Destino de ADO NET.Inputs[Entrada de destino de ADO NET]">
+                  synchronousInputId="Package\Cargar datos de csv\Tabla transaccional aerolineas.Inputs[Entrada de destino de ADO NET]">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Tarea Flujo de datos\Destino de ADO NET.Outputs[Salida de error de destino de ADO NET].Columns[ErrorCode]"
+                      refId="Package\Cargar datos de csv\Tabla transaccional aerolineas.Outputs[Salida de error de destino de ADO NET].Columns[ErrorCode]"
                       dataType="i4"
-                      lineageId="Package\Tarea Flujo de datos\Destino de ADO NET.Outputs[Salida de error de destino de ADO NET].Columns[ErrorCode]"
+                      lineageId="Package\Cargar datos de csv\Tabla transaccional aerolineas.Outputs[Salida de error de destino de ADO NET].Columns[ErrorCode]"
                       name="ErrorCode"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\Tarea Flujo de datos\Destino de ADO NET.Outputs[Salida de error de destino de ADO NET].Columns[ErrorColumn]"
+                      refId="Package\Cargar datos de csv\Tabla transaccional aerolineas.Outputs[Salida de error de destino de ADO NET].Columns[ErrorColumn]"
                       dataType="i4"
-                      lineageId="Package\Tarea Flujo de datos\Destino de ADO NET.Outputs[Salida de error de destino de ADO NET].Columns[ErrorColumn]"
-                      name="ErrorColumn"
-                      specialFlags="2" />
-                  </outputColumns>
-                  <externalMetadataColumns />
-                </output>
-              </outputs>
-            </component>
-            <component
-              refId="Package\Tarea Flujo de datos\Origen de archivo plano"
-              componentClassID="Microsoft.FlatFileSource"
-              contactInfo="Origen de archivo plano;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;1"
-              description="Origen de archivo plano"
-              localeId="3082"
-              name="Origen de archivo plano"
-              usesDispositions="true"
-              version="1">
-              <properties>
-                <property
-                  dataType="System.Boolean"
-                  description="Especifica si las columnas de longitud cero se tratan como NULL."
-                  name="RetainNulls">true</property>
-                <property
-                  dataType="System.String"
-                  description="Especifica el nombre de una columna de salida que contiene el nombre de archivo. Si no se especifica ningún nombre, no se genera ninguna columna de salida con el nombre de archivo."
-                  name="FileNameColumnName"></property>
-              </properties>
-              <connections>
-                <connection
-                  refId="Package\Tarea Flujo de datos\Origen de archivo plano.Connections[FlatFileConnection]"
-                  connectionManagerID="Package.ConnectionManagers[Administrador de conexiones de archivos planos]"
-                  connectionManagerRefId="Package.ConnectionManagers[Administrador de conexiones de archivos planos]"
-                  name="FlatFileConnection" />
-              </connections>
-              <outputs>
-                <output
-                  refId="Package\Tarea Flujo de datos\Origen de archivo plano.Outputs[Salida de origen de archivo plano]"
-                  name="Salida de origen de archivo plano">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\Tarea Flujo de datos\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[Code]"
-                      dataType="wstr"
-                      errorOrTruncationOperation="Conversión"
-                      errorRowDisposition="IgnoreFailure"
-                      externalMetadataColumnId="Package\Tarea Flujo de datos\Origen de archivo plano.Outputs[Salida de origen de archivo plano].ExternalColumns[Code]"
-                      length="50"
-                      lineageId="Package\Tarea Flujo de datos\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[Code]"
-                      name="Code"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indica si la columna usa las rutinas de análisis más rápidas independientes de la configuración regional."
-                          name="FastParse">false</property>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indica si los datos están en formato binario."
-                          name="UseBinaryFormat">false</property>
-                      </properties>
-                    </outputColumn>
-                    <outputColumn
-                      refId="Package\Tarea Flujo de datos\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[Description]"
-                      codePage="1252"
-                      dataType="str"
-                      errorOrTruncationOperation="Conversión"
-                      errorRowDisposition="IgnoreFailure"
-                      externalMetadataColumnId="Package\Tarea Flujo de datos\Origen de archivo plano.Outputs[Salida de origen de archivo plano].ExternalColumns[Description]"
-                      length="150"
-                      lineageId="Package\Tarea Flujo de datos\Origen de archivo plano.Outputs[Salida de origen de archivo plano].Columns[Description]"
-                      name="Description"
-                      truncationRowDisposition="FailComponent">
-                      <properties>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indica si la columna usa las rutinas de análisis más rápidas independientes de la configuración regional."
-                          name="FastParse">false</property>
-                        <property
-                          dataType="System.Boolean"
-                          description="Indica si los datos están en formato binario."
-                          name="UseBinaryFormat">false</property>
-                      </properties>
-                    </outputColumn>
-                  </outputColumns>
-                  <externalMetadataColumns
-                    isUsed="True">
-                    <externalMetadataColumn
-                      refId="Package\Tarea Flujo de datos\Origen de archivo plano.Outputs[Salida de origen de archivo plano].ExternalColumns[Code]"
-                      dataType="wstr"
-                      length="50"
-                      name="Code" />
-                    <externalMetadataColumn
-                      refId="Package\Tarea Flujo de datos\Origen de archivo plano.Outputs[Salida de origen de archivo plano].ExternalColumns[Description]"
-                      codePage="1252"
-                      dataType="str"
-                      length="150"
-                      name="Description" />
-                  </externalMetadataColumns>
-                </output>
-                <output
-                  refId="Package\Tarea Flujo de datos\Origen de archivo plano.Outputs[Salida de error de origen de archivo plano]"
-                  isErrorOut="true"
-                  name="Salida de error de origen de archivo plano">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\Tarea Flujo de datos\Origen de archivo plano.Outputs[Salida de error de origen de archivo plano].Columns[Columna de salida de error de origen de archivo plano]"
-                      codePage="1252"
-                      dataType="text"
-                      description="Columna de salida de error de origen de archivo plano"
-                      lineageId="Package\Tarea Flujo de datos\Origen de archivo plano.Outputs[Salida de error de origen de archivo plano].Columns[Columna de salida de error de origen de archivo plano]"
-                      name="Columna de salida de error de origen de archivo plano" />
-                    <outputColumn
-                      refId="Package\Tarea Flujo de datos\Origen de archivo plano.Outputs[Salida de error de origen de archivo plano].Columns[ErrorCode]"
-                      dataType="i4"
-                      lineageId="Package\Tarea Flujo de datos\Origen de archivo plano.Outputs[Salida de error de origen de archivo plano].Columns[ErrorCode]"
-                      name="ErrorCode"
-                      specialFlags="1" />
-                    <outputColumn
-                      refId="Package\Tarea Flujo de datos\Origen de archivo plano.Outputs[Salida de error de origen de archivo plano].Columns[ErrorColumn]"
-                      dataType="i4"
-                      lineageId="Package\Tarea Flujo de datos\Origen de archivo plano.Outputs[Salida de error de origen de archivo plano].Columns[ErrorColumn]"
+                      lineageId="Package\Cargar datos de csv\Tabla transaccional aerolineas.Outputs[Salida de error de destino de ADO NET].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -383,15 +383,15 @@
           </components>
           <paths>
             <path
-              refId="Package\Tarea Flujo de datos.Paths[Salida de columna derivada]"
-              endId="Package\Tarea Flujo de datos\Destino de ADO NET.Inputs[Entrada de destino de ADO NET]"
+              refId="Package\Cargar datos de csv.Paths[Salida de columna derivada]"
+              endId="Package\Cargar datos de csv\Tabla transaccional aerolineas.Inputs[Entrada de destino de ADO NET]"
               name="Salida de columna derivada"
-              startId="Package\Tarea Flujo de datos\Columna derivada.Outputs[Salida de columna derivada]" />
+              startId="Package\Cargar datos de csv\Columna derivada.Outputs[Salida de columna derivada]" />
             <path
-              refId="Package\Tarea Flujo de datos.Paths[Salida de origen de archivo plano]"
-              endId="Package\Tarea Flujo de datos\Columna derivada.Inputs[Entrada de columna derivada]"
+              refId="Package\Cargar datos de csv.Paths[Salida de origen de archivo plano]"
+              endId="Package\Cargar datos de csv\Columna derivada.Inputs[Entrada de columna derivada]"
               name="Salida de origen de archivo plano"
-              startId="Package\Tarea Flujo de datos\Origen de archivo plano.Outputs[Salida de origen de archivo plano]" />
+              startId="Package\Cargar datos de csv\Datos de aerolineas en csv.Outputs[Salida de origen de archivo plano]" />
           </paths>
         </pipeline>
       </DTS:ObjectData>
@@ -410,38 +410,38 @@
       <GraphLayout
         Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph">
         <NodeLayout
-          Size="180,42"
-          Id="Package\Tarea Flujo de datos"
+          Size="177,42"
+          Id="Package\Cargar datos de csv"
           TopLeft="275,239" />
       </GraphLayout>
     </LayoutInfo>
   </Package>
   <TaskHost
-    design-time-name="Package\Tarea Flujo de datos">
+    design-time-name="Package\Cargar datos de csv">
     <LayoutInfo>
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="196,42"
-          Id="Package\Tarea Flujo de datos\Origen de archivo plano"
+          Size="211,42"
+          Id="Package\Cargar datos de csv\Datos de aerolineas en csv"
           TopLeft="256,107" />
         <NodeLayout
-          Size="183,42"
-          Id="Package\Tarea Flujo de datos\Destino de ADO NET"
+          Size="228,42"
+          Id="Package\Cargar datos de csv\Tabla transaccional aerolineas"
           TopLeft="374,338" />
         <NodeLayout
           Size="168,42"
-          Id="Package\Tarea Flujo de datos\Columna derivada"
+          Id="Package\Cargar datos de csv\Columna derivada"
           TopLeft="336,222" />
         <EdgeLayout
-          Id="Package\Tarea Flujo de datos.Paths[Salida de origen de archivo plano]"
-          TopLeft="354,149">
+          Id="Package\Cargar datos de csv.Paths[Salida de origen de archivo plano]"
+          TopLeft="361.5,149">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="66,73"
+              EndConnector="58.5,73"
               Start="0,0"
-              End="66,65.5">
+              End="58.5,65.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
@@ -452,13 +452,13 @@
                     Point2="0,36.5"
                     Point3="4,36.5" />
                   <mssgle:LineSegment
-                    End="62,36.5" />
+                    End="54.5,36.5" />
                   <mssgle:CubicBezierSegment
-                    Point1="62,36.5"
-                    Point2="66,36.5"
-                    Point3="66,40.5" />
+                    Point1="54.5,36.5"
+                    Point2="58.5,36.5"
+                    Point3="58.5,40.5" />
                   <mssgle:LineSegment
-                    End="66,65.5" />
+                    End="58.5,65.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -468,14 +468,14 @@
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
-          Id="Package\Tarea Flujo de datos.Paths[Salida de columna derivada]"
+          Id="Package\Cargar datos de csv.Paths[Salida de columna derivada]"
           TopLeft="420,264">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="45.5,74"
+              EndConnector="68,74"
               Start="0,0"
-              End="45.5,66.5">
+              End="68,66.5">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
@@ -486,13 +486,13 @@
                     Point2="0,37"
                     Point3="4,37" />
                   <mssgle:LineSegment
-                    End="41.5,37" />
+                    End="64,37" />
                   <mssgle:CubicBezierSegment
-                    Point1="41.5,37"
-                    Point2="45.5,37"
-                    Point3="45.5,41" />
+                    Point1="64,37"
+                    Point2="68,37"
+                    Point3="68,41" />
                   <mssgle:LineSegment
-                    End="45.5,66.5" />
+                    End="68,66.5" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -505,7 +505,7 @@
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\Tarea Flujo de datos\Destino de ADO NET">
+    design-time-name="Package\Cargar datos de csv\Tabla transaccional aerolineas">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
