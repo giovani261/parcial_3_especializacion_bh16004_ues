@@ -11,8 +11,8 @@
   DTS:LocaleID="3082"
   DTS:ObjectName="Cargar datos de vuelos"
   DTS:PackageType="5"
-  DTS:VersionBuild="108"
-  DTS:VersionGUID="{FEABA141-332F-4489-94D5-EE369F19345E}">
+  DTS:VersionBuild="111"
+  DTS:VersionGUID="{D6CDE63D-8031-4D01-A2B5-73C288C815E2}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -1089,7 +1089,7 @@
       DTS:ObjectName="localhost.parcial 3 base transaccional 1">
       <DTS:ObjectData>
         <DTS:ConnectionManager
-          DTS:ConnectionString="Data Source=localhost;Initial Catalog=parcial 3 base transaccional;Integrated Security=True;Application Name=SSIS-cargar datos de 2018-{67254ED2-28BE-4DAB-B4FA-006984F0DB0F}localhost.parcial 3 base transaccional 1;" />
+          DTS:ConnectionString="Data Source=localhost;Initial Catalog=&quot;parcial 3 base transaccional&quot;;Integrated Security=True;Application Name=&quot;SSIS-cargar datos de 2018-{67254ED2-28BE-4DAB-B4FA-006984F0DB0F}localhost.parcial 3 base transaccional 1&quot;;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
   </DTS:ConnectionManagers>
@@ -5697,6 +5697,10 @@
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
+          Size="172,42"
+          Id="Package\cargar csv a tabla\Datos de vuelo csv"
+          TopLeft="150,129" />
+        <NodeLayout
           Size="210,42"
           Id="Package\cargar csv a tabla\Tabla transaccional Flights"
           TopLeft="342,328" />
@@ -5704,10 +5708,6 @@
           Size="168,42"
           Id="Package\cargar csv a tabla\Columna derivada"
           TopLeft="280,228" />
-        <NodeLayout
-          Size="172,42"
-          Id="Package\cargar csv a tabla\Datos de vuelo csv"
-          TopLeft="150,129" />
         <EdgeLayout
           Id="Package\cargar csv a tabla.Paths[Salida de origen de archivo plano]"
           TopLeft="236,171">
