@@ -11,8 +11,8 @@
   DTS:LocaleID="3082"
   DTS:ObjectName="Cargar datos de aerolineas"
   DTS:PackageType="5"
-  DTS:VersionBuild="14"
-  DTS:VersionGUID="{6474DC2C-C8CF-4DA1-9A94-8BB6591C0F25}">
+  DTS:VersionBuild="15"
+  DTS:VersionGUID="{C768BAFB-0A89-4D61-B375-B6648BD1C5FD}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -426,13 +426,13 @@
           Id="Package\Cargar datos de csv\Datos de aerolineas en csv"
           TopLeft="256,107" />
         <NodeLayout
-          Size="228,42"
-          Id="Package\Cargar datos de csv\Tabla transaccional aerolineas"
-          TopLeft="374,338" />
-        <NodeLayout
           Size="168,42"
           Id="Package\Cargar datos de csv\Columna derivada"
           TopLeft="336,222" />
+        <NodeLayout
+          Size="228,42"
+          Id="Package\Cargar datos de csv\Tabla transaccional aerolineas"
+          TopLeft="374,338" />
         <EdgeLayout
           Id="Package\Cargar datos de csv.Paths[Salida de origen de archivo plano]"
           TopLeft="361.5,149">

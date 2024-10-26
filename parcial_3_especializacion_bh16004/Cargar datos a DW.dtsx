@@ -11,8 +11,8 @@
   DTS:LocaleID="3082"
   DTS:ObjectName="Cargar datos a DW"
   DTS:PackageType="5"
-  DTS:VersionBuild="14"
-  DTS:VersionGUID="{F8764308-B59A-452F-808B-777FC82ED01D}">
+  DTS:VersionBuild="16"
+  DTS:VersionGUID="{4D620668-04C7-40C5-AC14-9EC2442B6EDC}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -1048,14 +1048,6 @@ where [refTable].[dateid] = ?</property>
           Id="Package\Tarea Flujo de datos\Datos de tabla Flights"
           TopLeft="252,111" />
         <NodeLayout
-          Size="296,42"
-          Id="Package\Tarea Flujo de datos\Cargar datos en tabla de hechos FactVuelos"
-          TopLeft="378,513" />
-        <NodeLayout
-          Size="229,42"
-          Id="Package\Tarea Flujo de datos\Recuperacion de aerolineaKey"
-          TopLeft="396,418" />
-        <NodeLayout
           Size="217,42"
           Id="Package\Tarea Flujo de datos\Recuperacion de tiempoKey"
           TopLeft="305,216" />
@@ -1063,6 +1055,14 @@ where [refTable].[dateid] = ?</property>
           Size="180,42"
           Id="Package\Tarea Flujo de datos\Conversión de datos"
           TopLeft="372,334" />
+        <NodeLayout
+          Size="229,42"
+          Id="Package\Tarea Flujo de datos\Recuperacion de aerolineaKey"
+          TopLeft="396,418" />
+        <NodeLayout
+          Size="296,42"
+          Id="Package\Tarea Flujo de datos\Cargar datos en tabla de hechos FactVuelos"
+          TopLeft="378,513" />
         <EdgeLayout
           Id="Package\Tarea Flujo de datos.Paths[Salida de origen de ADO NET]"
           TopLeft="344.5,153">
@@ -1207,12 +1207,35 @@ where [refTable].[dateid] = ?</property>
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
+    design-time-name="Package\Tarea Flujo de datos\Recuperacion de tiempoKey">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:boolean">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[DimTiempo]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
     design-time-name="Package\Tarea Flujo de datos\Recuperacion de aerolineaKey">
     <Properties>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:string">false</Value>
+          type="q2:boolean">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
@@ -1232,29 +1255,6 @@ where [refTable].[dateid] = ?</property>
   <PipelineComponentMetadata
     design-time-name="Package\Tarea Flujo de datos\Cargar datos en tabla de hechos FactVuelos">
     <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Tarea Flujo de datos\Recuperacion de tiempoKey">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:boolean">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string">[dbo].[DimTiempo]</Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:string">0</Value>
-      </Property>
       <Property>
         <Name>DataSourceViewID</Name>
       </Property>

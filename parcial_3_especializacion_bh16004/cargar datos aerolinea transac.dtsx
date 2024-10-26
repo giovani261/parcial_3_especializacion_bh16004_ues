@@ -11,8 +11,8 @@
   DTS:LocaleID="3082"
   DTS:ObjectName="Cargar datos aerolinea transac"
   DTS:PackageType="5"
-  DTS:VersionBuild="7"
-  DTS:VersionGUID="{4B10456F-0E95-4655-B00A-5D721BDB0C4C}">
+  DTS:VersionBuild="8"
+  DTS:VersionGUID="{405BB311-80E4-43BE-9818-8B6E12F46FEF}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -400,6 +400,10 @@
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
+          Size="286,42"
+          Id="Package\Tarea Flujo de datos\Datos de aerolineas de base transaccional"
+          TopLeft="273,122" />
+        <NodeLayout
           Size="216,42"
           Id="Package\Tarea Flujo de datos\Dimension aerolinea en DW"
           TopLeft="377,302" />
@@ -407,10 +411,6 @@
           Size="180,42"
           Id="Package\Tarea Flujo de datos\Conversión de datos"
           TopLeft="360,215" />
-        <NodeLayout
-          Size="286,42"
-          Id="Package\Tarea Flujo de datos\Datos de aerolineas de base transaccional"
-          TopLeft="273,122" />
         <EdgeLayout
           Id="Package\Tarea Flujo de datos.Paths[Salida de origen de ADO NET]"
           TopLeft="416,164">
@@ -483,7 +483,7 @@
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\Tarea Flujo de datos\Dimension aerolinea en DW">
+    design-time-name="Package\Tarea Flujo de datos\Datos de aerolineas de base transaccional">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -491,7 +491,7 @@
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Tarea Flujo de datos\Datos de aerolineas de base transaccional">
+    design-time-name="Package\Tarea Flujo de datos\Dimension aerolinea en DW">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
